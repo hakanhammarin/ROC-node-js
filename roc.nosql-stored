@@ -1,0 +1,1 @@
+{"counter":"function (nosql, next, params) {\n\n    // nosql === nosql embedded database object\n\n    nosql.update(function(doc) {\n        doc.counter = (doc.counter || 0) + 1;\n        return doc;\n    }, function() {\n        // next calls callback function in nosql.stored.execute();\n        next();\n    });\n\n}"}
